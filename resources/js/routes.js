@@ -4,12 +4,16 @@ import PageNotFound from './components/views/PageNotFound'
 import Register from './components/views/Register'
 import Login from './components/views/Login'
 
+import Authenticated from './components/views/Authenticated'
+
 import Dashboard from './components/dash/Dashboard'
 import Users from './components/dash/Users'
 import Table from './components/dash/Table'
 
 export default {
 	mode: 'history',
+	linkActiveClass: "active",
+	linkExactActiveClass: "active",
 
 	routes: [
 		{
@@ -56,12 +60,18 @@ export default {
 		},
 		{
 			path: '/u',
-			component: Dashboard,
-			name: 'dashboard',
-			meta: {
-				title: 'Dashboard'
-			},
+			component: Authenticated,
+			name: 'authenticated',
+
 			children: [
+				{
+					path: 'dashboard',
+					component: Dashboard,
+					name: 'dashboard',
+					meta: {
+						title: 'Dashboard'
+					}
+				},
 				{
 					path: 'users',
 					component: Users,
@@ -84,9 +94,12 @@ export default {
                	// alert('authenticated!')
                    next()
                }).catch(()=>{
-               	alert('login first')
+               	// alert('login first')
                    return next({ name: 'login'})
                })
+           },
+           methods: {
+
            }
 		}
 	]

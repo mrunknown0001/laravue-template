@@ -47,5 +47,6 @@
 <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
 <script src="{{ asset('assets/js/fastclick.js') }}"></script>
 <script src="{{ asset('assets/js/adminlte.js') }}"></script>
+<script src="{{ asset('assets/js/sweetalert.js') }}"></script>
 </body>
 </html>

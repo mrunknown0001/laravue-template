@@ -1,7 +1,8 @@
 <template>
 <div class="login-box">
   <div class="login-logo">
-    <a><b>Laravel VueJS SPA</b></a>
+    <img  class="img" height="50px" src="/assets/img/bgc_logo.png" alt="BGC Inventory System">
+    <p><a><b>Inventory Management System</b></a></p>
   </div>
   
   <div class="login-box-body">
@@ -52,7 +53,8 @@
 			login() {
 				// alert('hey')
 				axios.post('/api/login', this.form).then(() => {
-					alert('authentication success')
+					// alert('authentication success')
+					this.swal('Login Success!', 'Login Successful!', 'success');
 					this.$router.push({ name: "dashboard"}); 
 					// console.log(this.form.email)
 				}).catch((error) =>{
@@ -91,6 +93,18 @@
 			      el.classList.remove(className);
 			    }
 			  },
+			 swal(title, text, type) {
+			 	 Swal.fire({
+		            title: title,
+		            text: text,
+		            type: type,
+		            showCancelButton: false,
+		            confirmButtonColor: '#3085d6',
+		            cancelButtonColor: '#d33',
+		            confirmButtonText: 'ok'
+		          });
+			 }
+
 		},
 		mounted() {
 			  this.toggleBodyClass('addClass', 'login-page');

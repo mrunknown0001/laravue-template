@@ -19,12 +19,11 @@ class LoginController extends Controller
             return response()->json(Auth::user(), 200);
         }
         throw ValidationException::withMessages([
-            'login' =>['The provided credentials are incorect.']
+            'login' => "The provided credentials are incorects"
         ]);
         return true;
 
     }
-
 
 
     public function logout()
