@@ -15,3 +15,4 @@
 5. Run `php artisan migrate --seed`
 6. Run `php artisan serve`
 7. Access via [localhost](http://localhost:8000)
+8. Default Credentails: `admin@admin.com` | `password`
