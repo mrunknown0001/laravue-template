@@ -1,4 +1,8 @@
-Laravel 7 & VueJS 2 with AdminLTE 2 Admin Template
+##Laravel 7 & VueJS 2 with AdminLTE 2 Admin Template
 
-Functions
+###Functions
 -Login
+-Register
+-Admin Dashboard
+-Password Reset
+-Forgot Password
